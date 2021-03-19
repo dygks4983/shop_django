@@ -12,6 +12,9 @@ class Order(models.Model):
     quantity = models.IntegerField(verbose_name="수량")
     register_date = models.DateTimeField(auto_now_add=True, verbose_name="주문날짜")
 
+    def __str__(self):
+        return str(self.user) + " " + str(self.product)
+
     class Meta:
         db_table = "shop_order"
         verbose_name = "주문"
