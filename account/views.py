@@ -4,17 +4,17 @@ from .forms import RegisterForm, LoginForm
 
 
 def index(request):
-    return render(request, "index.html", {"email": request.session.get("user")})
+    return render(request, "account/index.html", {"email": request.session.get("user")})
 
 
 class RegisterView(FormView):
-    template_name = "register.html"
+    template_name = "account/register.html"
     form_class = RegisterForm
     success_url = "/"
 
 
 class LoginView(FormView):
-    template_name = "login.html"
+    template_name = "account/login.html"
     form_class = LoginForm
     success_url = "/"
 
